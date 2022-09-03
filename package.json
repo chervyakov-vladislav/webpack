@@ -4,7 +4,7 @@
   "description": "Sensible webpack 5 boilerplate using Babel and PostCSS.",
   "main": "index.js",
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
