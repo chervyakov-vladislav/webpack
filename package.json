@@ -1,6 +1,6 @@
 {
   "name": "webpack-boilerplate",
-  "version": "3.0.1",
+  "version": "1.0.0",
   "description": "Sensible webpack 5 boilerplate using Babel and PostCSS.",
   "main": "index.js",
   "author": "",

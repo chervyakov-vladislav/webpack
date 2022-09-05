@@ -21,6 +21,7 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     // Copies files from target to destination folder
+    // пример работы, копирует в assets файлы из общей папки public
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -37,7 +38,6 @@ module.exports = {
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      title: 'webpack Boilerplate',
       favicon: paths.src + '/images/favicon.png',
       template: paths.src + '/index.html', // template file
       filename: 'index.html', // output file
@@ -57,7 +57,7 @@ module.exports = {
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
     ],
   },
-
+  //дефолтные значения, extensions - можно не дописывать расширения, allias - сокращения(@ - корневая папка src, assets - общая папка public )
   resolve: {
     modules: [paths.src, 'node_modules'],
     extensions: ['.js', '.jsx', '.json'],
