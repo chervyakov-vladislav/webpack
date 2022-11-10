@@ -1,5 +1,10 @@
 import '../styles/index.scss'
 
+
+import message from './modules/module';
+
+console.log(message);
+
 const userData = {
   name: 'vasya',
   sur: 'vsyes'
@@ -16,3 +21,7 @@ let a = () => {
 }
 
 a();
+
+import birdsData from './modules/birds-data';
+
+console.log(birdsData)

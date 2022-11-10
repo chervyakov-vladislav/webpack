@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/chervyakov-vladislav/webpack",
+  "homepage": "https://github.com/rolling-scopes-school/chervyakov-vladislav-JSFE2022Q3",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --open",
+    "start": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
-    "deploy": "gh-pages -d dist -e test-folder"
+    "deploy": "gh-pages -d dist -e song-bird"
   },
   "browserslist": [
     "> 1%",

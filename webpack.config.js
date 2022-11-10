@@ -8,6 +8,9 @@ if (process.env.NODE_ENV === 'production') {
   mode = 'production';
 }
 
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
+
 module.exports = {
   mode: mode,
   entry: path.join(__dirname, 'src', 'js', 'index.js'),
@@ -21,14 +24,19 @@ module.exports = {
       filename: '[name].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'pages', 'index.pug')
+      template: path.join(__dirname, 'src', 'pages', 'pages', 'index.pug')
     })
   ],
+  target: isDev ? "web" : "browserslist",
   devServer: {
     historyApiFallback: true,
     compress: true,
     hot: true,
     port: 8080,
+    static: {
+      directory: './src',
+      watch: true
+  }
   },
   devtool: 'source-map',
   optimization: {
@@ -45,7 +53,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
+          (isDev) ? "style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
           {
               loader: "postcss-loader",
